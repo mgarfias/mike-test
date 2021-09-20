@@ -15,5 +15,4 @@ EXPOSE 8000
 ENV FLASK_APP run.py
 
 # run flask
-CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0", "-p", "8000"]
 CMD ["uwsgi", "--uid=nobody", "--gid=nogroup", "--master", "--plugins=python3","--protocol","http","--socket=0.0.0.0:8000","--wsgi-file=app.py","--mount","/=app:app"]
