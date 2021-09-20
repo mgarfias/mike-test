@@ -26,3 +26,11 @@
 
 ### Just access the running thing without doing anything else:
 1. `curl http://home.garfias.org:8000/bytes/20`
+* Note this is running on a Rancher k3s cluster at home on my a couple of Raspberry Pi nodes.
+
+### Deficiencies:
+K8s stuff could be done better:
+* Right now its running w/two pods, but on one host.  
+* No persistent storage.
+
+The provided spec isn't RESTful, as the /bytes/5 will always return a different value.  Better would be to pass it as an argument like /bytes?count=20.  Note that "REST" as a pattern wasn't specified, but the provided path example appears to be RESTy.
