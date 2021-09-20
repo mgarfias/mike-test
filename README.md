@@ -23,3 +23,6 @@
 1. Run `kubectl apply -f mike-test.yaml`
 2. Wait until `kubectl get pods` shows STATUS as "Running"
 3. Test via `curl <k8s external IP>:32000/bytes/25 2>/dev/null| base64 -d | wc -c`
+
+### Just access the running thing without doing anything else:
+1. `curl http://home.garfias.org:8000/bytes/20`
